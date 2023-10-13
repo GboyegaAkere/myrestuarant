@@ -8,15 +8,6 @@ export const helloItems = async (data) => {
   };
 
 
-// export const getAllFoodItems = async () => {
-//   const items = await getDoc(
-//     query(collection(firestore, "foodItems"),orderBy("id",'desc'))
-//   )
-//   return items.docs.map((doc)=>doc.data())
-// }
-
-
-
 export const getAllFoodItems = async () => {
   const items = await getDocs(
     query(collection(firestore, "foodItems"), orderBy("id", "desc"))

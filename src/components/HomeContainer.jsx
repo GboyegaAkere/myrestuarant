@@ -1,129 +1,87 @@
-import React from 'react'
-import Delivery from "../img/delivery.png"
-import HeroBg from "../img/heroBg.png"
-import C3 from "../img/c3.png"
-import { heroData } from '../utils/data'
+import React from "react";
+import Delivery from "../img/delivery.png";
+import HeroBg from "../img/heroBg.png";
+import { heroData } from "../utils/data";
+import { motion } from "framer-motion";
 
 const HomeContainer = () => {
-
   return (
-    <>
-    
-    <div className='hidden md:grid grid-cols-2 gap-2 mt-2 w-full'>
-    <div className=' flex items-start flex-col justify-center'>
-      <div className='bg-yellow-300  flex flex-row items-center p-2 rounded-lg gap-2'>
-        <p>Bike Delivery</p>
-        <div className='w-8 h-8 overflow-hidden bg-white  rounded-full'>
-         <img src={Delivery} alt="delivery " />
+    <section
+      className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full "
+      id="home"
+    >
+      <div className="py-2 flex-1 flex flex-col items-start justify-center gap-6">
+        <div className="flex items-center gap-2 justify-center bg-orange-100 px-4 py-1 rounded-full">
+          <p className="text-base text-orange-500 font-semibold">
+            Bike Delivery
+          </p>
+          <div className="w-8 h-8 bg-white rounded-full overflow-hidden drop-shadow-xl">
+            <img
+              src={Delivery}
+              className="w-full h-full object-contain"
+              alt="delivery"
+            />
+          </div>
+        </div>
+
+        <p className="text-[2.5rem] lg:text-[4.5rem] font-bold tracking-wide text-headingColor">
+          The Fastest Delivery in
+          <span className="text-orange-600 text-[3rem] lg:text-[5rem]">
+            Your City
+          </span>
+        </p>
+
+        <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima velit
+          eaque fugit distinctio est nam voluptatum architecto, porro iusto
+          deserunt recusandae ipsa minus eos sunt, dolores illo repellat facere
+          suscipit!
+        </p>
+
+        <button
+          type="button"
+          className="bg-gradient-to-br from-orange-400 to-orange-500 w-full md:w-auto px-4 py-2  rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"
+        >
+          Order Now
+        </button>
+      </div>
+      <div className="py-2 flex-1 flex items-center relative">
+        <img
+          src={HeroBg}
+          className=" ml-auto h-420 w-full lg:w-auto lg:h-650"
+          alt="hero-bg"
+        />
+
+        <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-4 flex-wrap md:grid grid-cols-2">
+          {heroData &&
+            heroData.map((n) => (
+              <motion.div whileHover={{scale:0.75}}
+                key={n.id}
+                className="  lg:w-190  p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg"
+              >
+                <motion.img
+                 whileHover={{scale:0.75}}
+                  src={n.image}
+                  className="w-20 lg:w-40 -mt-10 lg:-mt-20 "
+                  alt="I1"
+                />
+                <p className="text-base lg:text-xl font-semibold text-textColor mt-2 lg:mt-4">
+                  {n.name}
+                </p>
+
+                <p className="text-[12px] lg:text-sm text-lighttextGray font-semibold my-1 lg:my-3">
+                  {n.decp}
+                </p>
+
+                <p className="text-sm font-semibold text-headingColor">
+                  <span className="text-xs text-red-600">$</span> {n.price}
+                </p>
+              </motion.div>
+            ))}
         </div>
       </div>
+    </section>
+  );
+};
 
-      <div className='mt-4'>
-        <p className='text-[2.5rem] md:text-[4.25rem] font-bold tracking-wide'>The Fastest Delivery In <span className='text-green-300'>the City</span></p>
-      </div>
-      <p className='flex flex-start justify-center'>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Nam sint tenetur modi iste perferendis, deleniti neque excepturi
-        assumenda fugiat culpa ipsa, veniam numquam asperiores dolore cum nobis quae aperiam autem?
-      </p>
-      <div className='bg-yellow-300 mt-4 p-2 rounded-lg'>
-        <button>Order Now</button> 
-      </div>
-      
-    </div>
-
-    <div className='flex items-end flex-col relative '>
-      <div className='w-80 h-80'>
-       <img src={HeroBg} alt="" />
-      </div>
-      <div className='w-full h-full 
-        absolute top-0 left-0 
-        items-center justify-center 
-        px-32 py-4  flex-wrap grid grid-cols-2 gap-5'>
-        {
-          heroData && heroData.map(item=>(
-            <div key={item.id} className='w-190 p-10  bg-cardOverlay backdrop-blur-md rounded-3xl flex items-center justify-center flex-col '>
-              <img src={item.image} alt='cate' className='w-40 -mt-20 '/>
-              <p className=' text-xs md:text-base font-semibold text-textColor mt-4'>{item.name}</p>
-              <p className='text-xs md:text-sm text-gray-500 font-semibold my-3'>{item.description}</p>
-              <p className='text-sm font-semibold  text-headingColor'>{item.price}</p>
-            </div>
-          ))
-        }
-       </div>
-    </div>
-   </div>
-
-          {/* This is for Mobile */}
-   <div className='grid grid-rows-2 gap-2 mt-2 w-full md:hidden'>
-      <div className=' flex items-start flex-col justify-center'>
-          <div className='bg-yellow-300  flex flex-row items-center p-2 rounded-lg gap-2'>
-            <p>Bike Delivery</p>
-            <div className='w-8 h-8 overflow-hidden bg-white  rounded-full'>
-            <img src={Delivery} alt="delivery " />
-            </div>
-          </div>
-
-          <div className='mt-4'>
-            <p className='text-[2.5rem] md:text-[4.25rem] font-bold tracking-wide'>The Fastest Delivery In <span className='text-green-300'>the City</span></p>
-          </div>
-          <p className='flex flex-start justify-center'>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Nam sint tenetur modi iste perferendis, deleniti neque excepturi
-            assumenda fugiat culpa ipsa, veniam numquam asperiores dolore cum nobis quae aperiam autem?
-          </p>
-          <div className='bg-yellow-300 mt-4 p-2 rounded-lg w-full flex justify-center'>
-            <button>Order Now</button> 
-          </div>
-          
-      <div className='flex items-end flex-col mt-6'>
-          <div className='w-full h-80'>
-             <img src={HeroBg} alt="" />
-          </div>
-
-          <div className=' grid grid-cols-2 pl-1 gap-2 -mt-10 px-2'>
-            {
-              heroData && heroData.map(item=>(
-                <div key={item.id} className='w-38 p-10  bg-cardOverlay backdrop-blur-md rounded-3xl flex items-center justify-center flex-col mb-10 -pb-4'>
-                  <img src={item.image} alt='cate' className='w-40 -mt-20 '/>
-                  <p className=' text-xs md:text-base font-semibold text-textColor mt-4'>{item.name}</p>
-                  <p className='text-xs md:text-sm text-gray-500 font-semibold my-3'>{item.description}</p>
-                  <p className='text-sm font-semibold  text-headingColor'>{item.price}</p>
-                </div>
-              ))
-            }
-            
-
-            {/* <div className='w-40 p-10  bg-cardOverlay backdrop-blur-md rounded-3xl flex items-center justify-center flex-col '>
-              <img src={C3} alt='cate' className='w-40 -mt-20 '/>
-              <p className=' text-xs md:text-base font-semibold text-textColor mt-4'>rice</p>
-              <p className='text-xs md:text-sm text-gray-500 font-semibold my-3'>cooked</p>
-              <p className='text-sm font-semibold  text-headingColor'>#400</p>
-            </div>
-
-            <div className='w-40 p-10  bg-cardOverlay backdrop-blur-md rounded-3xl flex items-center justify-center flex-col '>
-              <img src={C3} alt='cate' className='w-40 -mt-20 '/>
-              <p className=' text-xs md:text-base font-semibold text-textColor mt-4'>rice</p>
-              <p className='text-xs md:text-sm text-gray-500 font-semibold my-3'>cooked</p>
-              <p className='text-sm font-semibold  text-headingColor'>#400</p>
-            </div>
-
-            <div className='w-40 p-10  bg-cardOverlay backdrop-blur-md rounded-3xl flex items-center justify-center flex-col '>
-              <img src={C3} alt='cate' className='w-40 -mt-20 '/>
-              <p className=' text-xs md:text-base font-semibold text-textColor mt-4'>rice</p>
-              <p className='text-xs md:text-sm text-gray-500 font-semibold my-3'>cooked</p>
-              <p className='text-sm font-semibold  text-headingColor'>#400</p>
-            </div> */}
-         </div>
-
-          
-     
-    </div>
-      </div>
-   </div>
-
-  </>
-  )
-}
-
-export default HomeContainer
+export default HomeContainer;

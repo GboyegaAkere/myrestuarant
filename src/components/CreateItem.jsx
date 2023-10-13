@@ -148,9 +148,9 @@ const CreateItem = () => {
     })
   }
 
-// React.useEffect(()=>{
-//   fetchData()
-// },[])
+React.useEffect(()=>{
+  fetchData()
+},[])
 
 
   return (

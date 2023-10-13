@@ -43,14 +43,14 @@ const Header = () => {
       }
 
   return (
-    <div className='fixed z-50 w-screen bg-primary p-6 px-16 md:shadow-lg'>
+    <div className='fixed z-50 w-screen bg-white p-6 px-16 md:shadow-lg'>
         <div className='hidden md:flex flex-row items-center '>
             <div className='flex flex-row items-center gap-2 cursor-pointer'>
                 <img src={Logo} alt="logo" className='h-10 w-10' />
                 <p>Gboye's Kichen</p>
             </div>
             <div className='ml-auto flex flex-row items-center'>
-                <ul className='flex flex-row gap-2 cursor-pointer'>
+                <ul className='flex flex-row gap-10 cursor-pointer'>
                     <li>Home</li>
                     <li>Menu</li>
                     <li>Service</li>

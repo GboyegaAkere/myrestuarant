@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <AnimatePresence>
-        <div className='w-screen h-auto flex flex-col bg-gray-100'>
+        <div className='w-screen h-auto flex flex-col bg-white'>
           <Header/>
           <main className='mt-20 px-12 md:mt-20 p-4 w-full py-4'>
             <Routes>
