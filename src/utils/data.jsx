@@ -101,6 +101,12 @@ export const heroData = [
       id:9,
       name:"Fruits",
       urlParamName:'fruits'
+    },
+
+    {
+      id:10,
+      name:"Burgers",
+      urlParamName:'burgers'
     }
   ]
 
