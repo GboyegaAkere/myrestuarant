@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import RowContainer from './RowContainer';
 import MenuContainer from './MenuContainer';
 import { useStateValue } from '../context/StateProvider';
+import CartContainer from './CartContainer';
 
 
 const MainContainer = () => {
@@ -22,8 +23,9 @@ const MainContainer = () => {
           </div>
         </div>
         <motion.hr whileHover={{scale:0.85}} className='w-[130px] h-2 bg-orange-500 rounded-lg'></motion.hr>
-         <RowContainer flag={true} data={foodItems?.filter((n)=>n.category ==="pizza")}/>
+         <RowContainer flag={false} data={foodItems?.filter((n)=>n.category ==="pizza")}/>
         <MenuContainer/>
+        <CartContainer/>
       </section>
     </div>
     

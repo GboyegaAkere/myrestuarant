@@ -47,7 +47,7 @@ const Header = () => {
         <div className='hidden md:flex flex-row items-center '>
             <div className='flex flex-row items-center gap-2 cursor-pointer'>
                 <img src={Logo} alt="logo" className='h-10 w-10' />
-                <p>Gboye's Kichen</p>
+                <p>Gboye's Store</p>
             </div>
             <div className='ml-auto flex flex-row items-center'>
                 <ul className='flex flex-row gap-10 cursor-pointer'>

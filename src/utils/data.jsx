@@ -51,60 +51,37 @@ export const heroData = [
  export const categories = [
     {
       id:1,
-      name:"Chicken",
-      urlParamName:'chicken'
+      name:"Drink",
+      urlParamName:'drink'
     },
 
     {
       id:2,
-      name:"Beef",
-      urlParamName:'beef'
-    },
-
-    {
-      id:3,
       name:"Mutton",
       urlParamName:'mutton'
     },
 
     {
-      id:4,
+      id:3,
       name:"Fish",
       urlParamName:'fish'
     },
 
     {
-      id:5,
+      id:4,
       name:"Pizza",
       urlParamName:'pizza'
     },
 
-    {
-      id:6,
-      name:"Curry",
-      urlParamName:'curry'
-    },
 
     {
-      id:7,
-      name:"Rice",
-      urlParamName:'rice'
-    },
-
-    {
-      id:8,
-      name:"Snacks",
-      urlParamName:'snacks'
-    },
-
-    {
-      id:9,
+      id:5,
       name:"Fruits",
       urlParamName:'fruits'
     },
 
     {
-      id:10,
+      id:6,
       name:"Burgers",
       urlParamName:'burgers'
     }

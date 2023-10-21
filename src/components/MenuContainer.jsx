@@ -20,7 +20,7 @@ const MenuContainer = () => {
             <p className='text-2xl font-semibold capitalize text-headingColor'>Our hot dishes</p>
         </div>
         <motion.hr whileHover={{scale:0.85}} className='w-[130px] h-2 bg-orange-500 rounded-lg'></motion.hr>
-        <div className='w-full flex items-center justify-start lg:justify-center gap-8 mt-6 py-6 overflow-x-scroll '>
+        <div className='w-full flex items-center justify-start lg:justify-center gap-8 mt-6 py-6  '>
           {categories && categories.map((category )=>(
             <motion.div whileTap={{scale:0.6}} onClick={()=>setFilter(category.urlParamName)} key={category.id} className={`group ${filter === category.urlParamName ? " bg-red-500" : " bg-white"} w-24 min-w-[94px] h-28 cursor-pointer rounded-lg drop-shadow-lg flex flex-col gap-3 items-center justify-center duration-150    hover:bg-red-500`}>
               <div className={`w-10 h-10 rounded-full ${filter === category.urlParamName ? " bg-white" : " bg-red-500"} group-hover:bg-white flex items-center justify-center`}>
@@ -31,7 +31,7 @@ const MenuContainer = () => {
           ))}
         </div>
         <div className='w-full' >
-            <RowContainer flag={false} data={foodItems?.filter((n)=>n.category == filter)}/>
+            <RowContainer flag={false} data={foodItems?.filter((n)=>n.category === filter)}/>
         </div>
     </section>
   )
