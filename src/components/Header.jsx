@@ -56,6 +56,16 @@ const Header = () => {
                     <li>Service</li>
                     <li>About</li>
                 </ul>
+                <div className="relative flex items-center justify-center ml-6">
+                  <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer " />
+            
+                    <div className=" absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
+                    <p className="text-xs text-white font-semibold">
+                    0
+                    </p>
+                </div>
+            
+          </div>
                 <div className='flex flex-row items-center gap-4 ml-10 '>
                     <BsCartFill className='w-6 h-6'/>
                     <div className='relative'>
