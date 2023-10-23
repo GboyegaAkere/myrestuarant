@@ -15,7 +15,15 @@ const Header = () => {
 
     const firebaseAuth = getAuth(app)
     const provider = new GoogleAuthProvider()
-    const [{user}, dispatch] = useStateValue()
+    const [{user, cartShow}, dispatch] = useStateValue()
+
+    const showCart = () =>{
+        dispatch({
+            type:actionType.SET_CART_SHOW,
+            cartShow:!cartShow
+        })
+    }
+
     
 
     const login = async () => {
@@ -56,8 +64,8 @@ const Header = () => {
                     <li>Service</li>
                     <li>About</li>
                 </ul>
-                <div className="relative flex items-center justify-center ml-6">
-                  <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer " />
+                <div className="relative flex items-center justify-center ml-6" onClick={showCart}>
+                    <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer " />
             
                     <div className=" absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
                     <p className="text-xs text-white font-semibold">
@@ -94,12 +102,12 @@ const Header = () => {
             </div>
         </div>
     
-        <div className='flex flex-row items-center justify-between md:hidden'>
-        <BsCartFill className='w-6 h-6'/>
+        <div className='flex flex-row items-center justify-between md:hidden' onClick={showCart}>
+          <BsCartFill className='w-6 h-6'/>
         <div className='flex flex-row items-center gap-2'>
            
             <img src={Logo} alt="logo" className='h-14 w-14 ' />
-            <p>Gboyes Kichen</p>
+            <p>Gboye's Store </p>
         </div>
             <div className='relative'>
                 <img src={user ? user.photoURL:Avatar}  alt="profile" className='h-10 w-10 rounded-full' onClick={login}/>

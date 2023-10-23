@@ -5,12 +5,24 @@ import { motion } from 'framer-motion'
 import Fi1 from "../img/fi1.png"
 import { BiMinus } from 'react-icons/bi';
 import { BiPlus } from 'react-icons/bi';
+import { actionType } from '../context/reducer';
+import { useStateValue } from '../context/StateProvider';
 
 const CartContainer = () => {
+
+    const [{cartShow}, dispatch] = useStateValue()
+    const showCart = () =>{
+        dispatch({
+            type:actionType.SET_CART_SHOW,
+            cartShow:!cartShow
+        })
+    }
+
+
   return (
     <div className='fixed top-0 right-0 w-full md:w-375 h-screen bg-white drop-shadow-md flex flex-col z-[101]'>
         <div className='ww-full flex items-center justify-between p-4'>
-                <motion.div whileTap={{scale:0.75}}>
+                <motion.div whileTap={{scale:0.75}} onClick={showCart}>
                     <MdOutlineKeyboardBackspace className='text-gray-600 text-3xl cursor-pointer'/>
                     
                 </motion.div>

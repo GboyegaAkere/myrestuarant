@@ -9,7 +9,7 @@ import CartContainer from './CartContainer';
 
 
 const MainContainer = () => {
-  const [{foodItems}, dispatch] = useStateValue()
+  const [{foodItems,cartShow}, dispatch] = useStateValue()
 
   return (
     <div>
@@ -25,7 +25,9 @@ const MainContainer = () => {
         <motion.hr whileHover={{scale:0.85}} className='w-[130px] h-2 bg-orange-500 rounded-lg'></motion.hr>
          <RowContainer flag={false} data={foodItems?.filter((n)=>n.category ==="pizza")}/>
         <MenuContainer/>
-        <CartContainer/>
+        {cartShow &&  (
+          <CartContainer/>
+        )}
       </section>
     </div>
     

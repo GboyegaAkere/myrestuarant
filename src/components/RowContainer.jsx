@@ -6,7 +6,6 @@ import { MdShoppingBasket } from "react-icons/md";
 import NotFound from "../img/NotFound.svg";
 
 const RowContainer = ({flag, data}) => {
-  console.log(data)
   return (
     <div className={`w-full my-12 flex flex-row justify-center gap-2 ${flag ? "overflow-x-scroll" : "overflow-x-hidden"}`}>
           {data && data.length > 0 ? (
