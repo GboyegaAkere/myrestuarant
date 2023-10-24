@@ -4,8 +4,29 @@ import Fi1 from "../img/fi1.png"
 import { motion } from "framer-motion";
 import { MdShoppingBasket } from "react-icons/md";
 import NotFound from "../img/NotFound.svg";
+import { useStateValue } from "../context/StateProvider";
+import { actionType } from "../context/reducer";
 
 const RowContainer = ({flag, data}) => {
+  const [items, setItems] = React.useState([]);
+
+  const [{ cartItems }, dispatch] = useStateValue();
+
+  const addtocart = () => {
+    dispatch({
+      type: actionType.SET_CART_ITEMS,
+      cartItems: items,
+    });
+    localStorage.setItem("cartItems", JSON.stringify(items));
+  };
+
+  React.useEffect(() => {
+    addtocart();
+  }, [items]);
+
+
+
+
   return (
     <div className={`w-full my-12 flex flex-row justify-center gap-2 ${flag ? "overflow-x-scroll" : "overflow-x-hidden"}`}>
           {data && data.length > 0 ? (
@@ -28,9 +49,9 @@ const RowContainer = ({flag, data}) => {
                   <motion.div
                     whileTap={{ scale: 0.75 }}
                     className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md -mt-8"
-                    // onClick={() => setItems([...cartItems, item])}
+                    onClick={() => setItems([...cartItems, item])} 
                   >
-                    <MdShoppingBasket className="text-white" />
+                    <MdShoppingBasket className="text-white" onClick={() => setItems([...cartItems, item])} />
                   </motion.div>
                 </div>
 
