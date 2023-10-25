@@ -61,7 +61,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 }
 
 // module.exports = {
