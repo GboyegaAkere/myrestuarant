@@ -24,18 +24,17 @@ const HomeContainer = () => {
           </div>
         </div>
 
-        <p className="text-[2.5rem] lg:text-[4.5rem] font-bold tracking-wide text-headingColor">
-          The Fastest Delivery in
-          <span className="text-orange-600 text-[3rem] lg:text-[5rem]">
-            Your City
+        <p className="text-[2.5rem] lg:text-[3rem] font-bold tracking-wide text-headingColor">
+           Your One-Stop Destination for Fresh, Quality, 
+          <span className="text-orange-600 text-[3rem] lg:text-[3rem]">
+           and Convenient Grocery Shopping
           </span>
         </p>
 
         <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima velit
-          eaque fugit distinctio est nam voluptatum architecto, porro iusto
-          deserunt recusandae ipsa minus eos sunt, dolores illo repellat facere
-          suscipit!
+        Discover the Freshest Ingredients
+
+Explore a world of flavors and freshness as you step into FreshPicks Grocery Store. We believe in bringing the best to your table, and that starts with our handpicked selection of the finest produce, meats, and pantry staples.
         </p>
 
         <button

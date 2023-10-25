@@ -23,7 +23,12 @@ const MainContainer = () => {
           </div>
         </div>
         <motion.hr whileHover={{scale:0.85}} className='w-[130px] h-2 bg-orange-500 rounded-lg'></motion.hr>
-         <RowContainer flag={false} data={foodItems?.filter((n)=>n.category ==="pizza")}/>
+        <div className="w-full">
+          <RowContainer
+            flag={false}
+            data={foodItems?.filter((n) => n.category == "pizza")}
+          />
+        </div>
         <MenuContainer/>
         {cartShow &&  (
           <CartContainer/>
