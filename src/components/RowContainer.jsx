@@ -45,21 +45,21 @@ const RowContainer = ({ flag, data, scrollValue }) => {
           >
             <div className="w-full flex items-center justify-between">
               <motion.div
-                className="w-40 h-40 -mt-8 drop-shadow-2xl"
+                className="w-40 h-40 -mt-8 drop-shadow-2xl rounded-full"
                 whileHover={{ scale: 1.2 }}
               >
                 <img
                   src={item?.imageURL}
                   alt=""
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain rounded-full"
                 />
               </motion.div>
-              <motion.div
-                whileTap={{ scale: 0.75 }}
-                className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md -mt-8"
-                onClick={() => setItems([...cartItems, item])}
-              >
-                <MdShoppingBasket className="text-white" />
+                <motion.div
+                  whileTap={{ scale: 0.75 }}
+                  className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center cursor-pointer hover:shadow-md -mt-8"
+                  onClick={() => setItems([...cartItems, item])}
+                >
+                  <MdShoppingBasket className="text-white" />
               </motion.div>
             </div>
 
