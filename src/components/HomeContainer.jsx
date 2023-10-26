@@ -13,7 +13,7 @@ const HomeContainer = () => {
       <div className="py-2 flex-1 flex flex-col items-start justify-center gap-6">
         <div className="flex items-center gap-2 justify-center bg-orange-100 px-4 py-1 rounded-full">
           <p className="text-base text-orange-500 font-semibold">
-            Bike Delivery
+            We do Delivery
           </p>
           <div className="w-8 h-8 bg-white rounded-full overflow-hidden drop-shadow-xl">
             <img
@@ -54,14 +54,14 @@ Explore a world of flavors and freshness as you step into FreshPicks Grocery Sto
         <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-4 flex-wrap md:grid grid-cols-2">
           {heroData &&
             heroData.map((n) => (
-              <motion.div whileHover={{scale:0.75}}
+              <div
                 key={n.id}
                 className="  lg:w-190  p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg"
               >
                 <motion.img
                  whileHover={{scale:0.75}}
                   src={n.image}
-                  className="w-20 lg:w-40 -mt-10 lg:-mt-20 "
+                  className="w-20 lg:w-40 -mt-10 lg:-mt-20 rounded-full "
                   alt="I1"
                 />
                 <p className="text-base lg:text-xl font-semibold text-textColor mt-2 lg:mt-4">
@@ -75,7 +75,7 @@ Explore a world of flavors and freshness as you step into FreshPicks Grocery Sto
                 <p className="text-sm font-semibold text-headingColor">
                   <span className="text-xs text-red-600">$</span> {n.price}
                 </p>
-              </motion.div>
+              </div>
             ))}
         </div>
       </div>
